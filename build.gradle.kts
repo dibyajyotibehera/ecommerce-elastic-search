@@ -6,7 +6,7 @@ plugins {
 
 group = "com.ecommerce"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_HIGHER
+java.sourceCompatibility = org.gradle.api.JavaVersion.VERSION_19
 
 repositories {
     mavenCentral()
