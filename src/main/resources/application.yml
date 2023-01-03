@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: searchApp
+es:
+  hostname: localhost
+  port: 9200
