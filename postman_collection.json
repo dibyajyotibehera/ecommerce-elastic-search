@@ -100,6 +100,26 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "log es request and response",
+			"request": {
+				"url": "http://localhost:9200/ecommerce-products-index/_settings",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"index.search.slowlog.threshold.query.info\": \"0ms\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
