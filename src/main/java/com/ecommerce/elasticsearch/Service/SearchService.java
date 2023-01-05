@@ -24,9 +24,9 @@ public class SearchService {
         SearchResponse<Product> productSearchResponse = elasticsearchClient.search(s -> s
                 .index("ecommerce-products-index")
                 .query(q -> q
-                        .bool(b -> b
-                                .should(sh -> sh.term(t -> t.field("title").value(query)))
-                                .should(sh -> sh.term(t -> t.field("description").value(query)))
+                        .bool(bq -> bq
+                                .should(sq -> sq.match(mq -> mq.field("title").query(query)))
+                                .should(sq -> sq.match(mq -> mq.field("description").query(query)))
                         )
                 ), Product.class);
         List<Hit<Product>> hits = productSearchResponse.hits().hits();
